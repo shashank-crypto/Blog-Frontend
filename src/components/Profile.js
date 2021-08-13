@@ -8,7 +8,7 @@ const Profile = ({user}) => {
         width : "90%",
         padding : "2em",
         backgroundColor : "rgb(190, 224, 157)",
-        margin: "auto"
+        margin: " 2em auto"
     }
 
     return (
