@@ -22,9 +22,21 @@ nav>li {
 }
 
 .PostContainer {
-    width : 80%;
+    /* width : 60%; */
     background-color: bisque;
     align-items: center;
+}
+
+.Tags > span {
+    margin : 0.5em;
+    /* background-color: rgb(158, 158, 151);
+    border-radius: 50px;
+    padding: 0.3em 0.5em; */
+}
+
+.Tags {
+    color : blue;
+    margin : 0.5em;
 }
 
 .PostContent {
@@ -46,5 +58,5 @@ hr {
 }
 
 .pip {
-    color : rgb(190, 224, 157);
+    color : rgb(218, 180, 131);
 }

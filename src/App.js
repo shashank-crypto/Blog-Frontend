@@ -4,6 +4,24 @@ import Post from './components/Post'
 import React from "react"
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import './App.css' ;
+import Recommend from './components/Recommend';
+
+const recommend = [{
+  header : "Life changes after a bear attack",
+  postId : "a02nfu3fh32"
+},
+{
+  header : "ReactJs, why such success?",
+  postId : "w3343dvejvn"
+},
+{
+  header : "What make the cars make different engine noises?",
+  postId : "e43943ewndjw"
+},
+{
+  header : "Electric Bikes : Can they ever make to the real world?",
+  postId : "e393rn3r93rd"
+}]
 
 function App() {
 
@@ -29,7 +47,7 @@ function App() {
     }
   }
 
-  const Posts ={
+  const Posts = [{
     author : "Shashank",
     header : "How to Get started with reactJs ?",
     img : {
@@ -42,16 +60,30 @@ function App() {
         text : "It was an amazing post",
         date : Date.now()
       }
-    }
-  }
+    },
+    tags : ["ghost" , "paranormal" , "AI"]
+  }]
 
   return (
     <Router>
       <div className="App">
         <Nav user={User} ifLogged={true}/>
         <Switch>
-          <Route path="/" exact><Post post={Posts} /></Route>
-          <Route path="/profile"><Profile user={User}/></Route>
+          <Route path="/" exact>
+            <div style={{display : "flex"}}>
+              <div style={{width : "70%"}}>
+                <Post post={Posts[0]} />
+                <Post post={Posts[0]} />
+                <Post post={Posts[0]} />
+                <Post post={Posts[0]} />
+                <Post post={Posts[0]} />
+              </div>
+              <div><Recommend recommendPosts={recommend}/></div>
+            </div>
+          </Route>
+          <Route path="/profile">
+            <Profile user={User}/>
+          </Route>
         </Switch>
       </div>
     </Router>

@@ -1,6 +1,6 @@
 Planning database model===>
 
-We need to create User and Post and comment
+We need to create User and Post and comment and tags
 
 const User = {
     username : String,
@@ -25,7 +25,9 @@ const User = {
     }
     starred : [String], (starred postIds)
     liked : [String], (liked postIds)
-    commented : [String] (postIds commented by the user)
+    commented : [String], (postIds commented by the user)
+    tags : [String] (tagIdS)
+}
 
 Who have the authentication to delete a post. // (userId===authorId || userId===adminId) ? permitted : not_permitted
 Who have the authentication to update a post. // (userId===authorId) ? permitted : not_permitted
@@ -45,7 +47,9 @@ const Post = {
     comments : {
         comment : [String],
         count : number (comment.length)
-    }
+    },
+    date : Date,
+    tags : [String] (tagIdS)
 }
 
 const Comment = {
@@ -56,4 +60,9 @@ const Comment = {
         likes : number,
         //commentcommented : [String] (commentIds) //optional
     }
+}
+
+const Tag = {
+    tagId : String, //also tagname
+    posts : [String] (postIds)
 }
